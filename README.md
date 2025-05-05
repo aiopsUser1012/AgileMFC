@@ -64,7 +64,7 @@ This will:
 
 AgileMFC achieves the following performance (weighted F1-score):
 
-| Dataset | Precision | Recall | F1-score | Improvement over SOTA |
+| Dataset | Precision | Recall | F1-score | Average improvement |
 |:---|:---|:---|:---|:---|
 | **GAIA** | 0.958 | 0.924 | 0.939 | 🚀 **+ 12.4%** |
 | **TrainTicket** | 0.751 | 0.720 | 0.728 | 🚀 **+ 9.1%** |
