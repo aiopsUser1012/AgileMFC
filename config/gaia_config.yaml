@@ -1,0 +1,74 @@
+dataset: 'gaia'
+base_path: '.'
+demo_path: 'data/gaia'
+label_path: './data/gaia/gaia_resplit.csv'
+
+parse:
+  nodes: 'dbservice1 dbservice2 logservice1 logservice2 mobservice1 mobservice2 redisservice1 redisservice2 webservice1 webservice2'
+  
+  metric_path: 'anomalies/gaia_metric.json'
+  trace_path: 'anomalies/gaia_trace.json' 
+  log_path: 'anomalies/gaia_log.npy' 
+
+  log_save_path: 'parse/parsed_log.pkl' 
+  metric_save_path: 'parse/parsed_metric.pkl' 
+  trace_save_path: 'parse/parsed_trace.pkl' 
+
+rep:
+  dataset: gaia
+  nodes: 'dbservice1 dbservice2 logservice1 logservice2 mobservice1 mobservice2 redisservice1 redisservice2 webservice1 webservice2'
+  
+  text_path_log: 'parse/parsed_log.pkl'
+  text_path_metric: 'parse/parsed_metric.pkl'
+  text_path_trace: 'parse/parsed_trace.pkl'
+
+  txt_save_path: 'rep/temp'
+  train_path_metric: 'rep/temp/train_metric.txt'
+  test_path_metric: 'rep/temp/test_metric.txt'
+  train_path_log: 'rep/temp/train_log.txt'
+  test_path_log: 'rep/temp/test_log.txt'
+  train_path_trace: 'rep/temp/train_trace.txt'
+  test_path_trace: 'rep/temp/test_trace.txt'
+
+  train_da_path: 'rep/temp/train_da.txt'
+  train_da_metric_path: 'rep/temp/train_da_metric.txt'
+  train_da_log_path: 'rep/temp/train_da_log.txt'
+  train_da_trace_path: 'rep/temp/train_da_trace.txt'
+  semb_save_path: 'e8_b4_w07_s1000.pkl'
+
+  sample_count: 1000
+  edit_count: 1
+  minCount: 1
+
+  save_model: True
+  check_point_save_path: 'rep/checkpoint'
+  model_save_path: 'rep/trans_model.pth'
+  word_list_path: 'rep/trans_words.json'
+
+  vector_dim: 128
+  emb_dim: 388
+  batch: 16
+  epoch: 10
+  num_layers: 4
+  num_experts: 8
+  num_tasks: 128
+  towers_hidden_dim: 32
+  gate_weight: 0.7
+  lr: 0.001
+  service_num: 10
+
+clf:
+  dataset: gaia
+  nodes: 'dbservice1 dbservice2 logservice1 logservice2 mobservice1 mobservice2 redisservice1 redisservice2 webservice1 webservice2'
+  save_dir: 'clf'
+  Xs_path: 'e8_b4_w07_s1000.pkl'
+  run_table_path: 'gaia_resplit.csv'
+  hidden_dim_1: 512
+  hidden_dim_2: 64
+  N_class: 5
+  epoch: 2000 
+  batch_size: 64
+  win_size: 10
+  win_threshold: 0.0001
+  lr: 0.001
+  weight_decay: 0.0001
