@@ -5,8 +5,6 @@
 This repository implements **AgileMFC**, a novel framework for failure classification in microservice systems using multi-modal monitoring data (logs, metrics, traces). The method combines modality-aware representation learning with a two-stage training strategy, achieving SOTA performance on three real-world datasets. For details, refer to our paper:
 **"To Split or to Merge? Exploring Multi-modal Data Flexibly for Failure Classification in Microservices"** (Internetware '25).
 
----
-
 ## 📖 Table of Contents
 - [✨ Features](#-features)
 - [⚙️ Installation](#-installation)
@@ -15,8 +13,6 @@ This repository implements **AgileMFC**, a novel framework for failure classific
 - [📈 Results](#-results)
 - [📚 Citation](#-citation)
 
----
-
 ## ✨ Features
 - **🔀 Multi-modal Fusion**: Processes logs, metrics, and traces using modality-specific expert networks.
 - **🎛️ Flexible Gating Mechanism**: Combines modality-specific and shared gates for balanced feature integration.
@@ -24,10 +20,7 @@ This repository implements **AgileMFC**, a novel framework for failure classific
 - **🤖 Transformer-Based Experts**: Leverages self-attention to capture failure-sensitive patterns.
 - **🔁 Reproducibility**: Supports full replication of experiments on GAIA, TrainTicket, and SocialNetwork datasets.
 
----
-
 ## ⚙️ Installation
-
 ### Prerequisites
 - Python 3.8+
 - CUDA 11.3 (for GPU acceleration)
@@ -47,9 +40,7 @@ This repository implements **AgileMFC**, a novel framework for failure classific
     pip install torch==1.10.0+cu113 torchvision==0.11.0+cu113 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
     ```
 
----
-
-## 📁 Dataset
+## 📁 Datasets
 We evaluate AgileMFC on three datasets. Follow these steps to prepare the data:
 
 | Dataset | Description | Source |
@@ -57,8 +48,6 @@ We evaluate AgileMFC on three datasets. Follow these steps to prepare the data:
 | **GAIA** | Simulated environment with 5 failure types (56M metrics, 87M logs, 2.3M traces) | [Download](https://github.com/CloudWise-OpenSource/GAIA-DataSet) |
 | **TrainTicket** | Ticketing system with 3 failure types (127M metrics, 6.7M logs, 48K traces) | [Download](https://zenodo.org/records/7615394) |
 | **SocialNetwork** | Social platform with 3 failure types (2.4M metrics, 1.4M logs, 126K traces) | [Download](https://zenodo.org/records/7615394) |
-
----
 
 ## 🚀 Quick Start
 Run a demo on the GAIA dataset:
@@ -71,8 +60,6 @@ This will:
 2. 🧠 Train the representation network.
 3. 🎓 Train the classifier and evaluate performance.
 
----
-
 ## 📈 Results
 
 AgileMFC achieves the following performance (weighted F1-score):
@@ -82,8 +69,6 @@ AgileMFC achieves the following performance (weighted F1-score):
 | **GAIA** | 0.958 | 0.924 | 0.939 | 🚀 **+ 12.4%** |
 | **TrainTicket** | 0.751 | 0.720 | 0.728 | 🚀 **+ 9.1%** |
 | **SocialNetwork** | 0.872 | 0.620 | 0.701 | 🚀 **+ 11.8%** |
-
----
 
 ## 📚 Citation
 ```bibtex
